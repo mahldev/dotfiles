@@ -11,7 +11,16 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="nord-extended/nord"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="nord-extended/nord"
+
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+    --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1
+    --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
+    --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b
+     --color=bg+:#343844,gutter:-1
+     --height 40% --layout=reverse
+    '
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -79,10 +88,11 @@ ZSH_THEME="nord-extended/nord"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf fzf-tab)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
+fzf_completions_path=~/.oh-my-zsh/completions
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -152,6 +162,9 @@ eval "`fnm env`"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
