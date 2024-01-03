@@ -53,24 +53,24 @@ return {
     end,
   },
 
-  -- {
-  --   "rcarriga/nvim-notify",
-  --   opts = {
-  --     background_colour = "#1a1b26",
-  --     timeout = 5000,
-  --   },
-  -- },
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      background_colour = "#1a1b26",
+      timeout = 5000,
+    },
+  },
 
   -- animations
-  {
-    "echasnovski/mini.animate",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      opts.scroll = {
-        enable = false,
-      }
-    end,
-  },
+  -- {
+  --   "echasnovski/mini.animate",
+  --   event = "VeryLazy",
+  --   opts = function(_, opts)
+  --     opts.scroll = {
+  --       enable = false,
+  --     }
+  --   end,
+  -- },
 
   -- buffer line
   --  {
