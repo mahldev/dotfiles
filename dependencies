@@ -1,0 +1,9 @@
+#notifcaciones
+libnoitfy-bin
+
+
+#fnm
+
+# TMUX
+# tmp
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
