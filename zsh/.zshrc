@@ -48,6 +48,10 @@ alias gdf='git clean -f'
 
 # tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
+alias tm=tmuxifier
+
+# editor
+export EDITOR="/usr/local/bin/nvim"
 
 # fnm
 export PATH="/home/mahl/.local/share/fnm:$PATH"

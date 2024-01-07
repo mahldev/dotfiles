@@ -1,7 +1,7 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-vim.keymap.set("n", "<leader>rr", "<Plug>RestNvim", {})
+vim.keymap.set("n", "<leader>rr", "<Plug>RestNvim", { silent = true })
 
 vim.keymap.set("n", "<leader>ci", [[:set shiftwidth=4 expandtab<CR>]], { noremap = true, silent = true })
 
@@ -50,14 +50,14 @@ vim.api.nvim_set_keymap("i", "<A-j>", "<Nop>", { noremap = true, silent = true }
 vim.api.nvim_set_keymap("i", "<A-k>", "<Nop>", { noremap = true, silent = true })
 
 -- Disable key mappings in normal mode
-vim.api.nvim_set_keymap("n", "<A-j>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-k>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<A-j>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<A-k>", "<Nop>", { noremap = true, silent = true })
 
 -- Disable key mappings in visual block mode
-vim.api.nvim_set_keymap("x", "<A-j>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("x", "<A-k>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("x", "J", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("x", "K", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("x", "<A-j>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("x", "<A-k>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("x", "J", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("x", "K", "<Nop>", { noremap = true, silent = true })
 
 vim.opt.scrolloff = 8
 
@@ -65,6 +65,15 @@ vim.opt.updatetime = 144
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- REMAP folke/flash.nvim flashbang
+vim.keymap.set("n", "f", "f")
+vim.keymap.set("n", "F", "F")
+vim.keymap.set("n", "t", "t")
+vim.keymap.set("n", "T", "T")
+vim.keymap.set("n", ";", "<Nop>")
+
+vim.keymap.set("x", "<leader>p", '"_dP')
 
 vim.keymap.set("n", "<A-o>", "i<CR><ESC>", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-i>", "i<Space><ESC>", { noremap = true, silent = true })
