@@ -24,7 +24,8 @@ font:
     family: "JetBrainsMonoNL Nerd Font"
     #style: Bold Italic
 
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors:
+  true
   # Point size
 
   # Offset

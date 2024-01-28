@@ -3,8 +3,6 @@
 -- Add any additional keymaps here
 vim.keymap.set("n", "<leader>rr", "<Plug>RestNvim", { silent = true })
 
-vim.keymap.set("n", "<leader>ci", [[:set shiftwidth=4 expandtab<CR>]], { noremap = true, silent = true })
-
 -- local nvim_tmux_nav = require("nvim-tmux-navigation")
 
 -- vim.keymap.set("n", "<c-h>", nvim_tmux_nav.nvimtmuxnavigateleft)
@@ -29,19 +27,19 @@ vim.keymap.set("n", "<C-e>", function()
   harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
 
-vim.keymap.set("n", "<C-M-h>", function()
+vim.keymap.set("n", "<C-h>", function()
   harpoon:list():select(1)
 end)
 
-vim.keymap.set("n", "<C-M-j>", function()
+vim.keymap.set("n", "<C-j>", function()
   harpoon:list():select(2)
 end)
 
-vim.keymap.set("n", "<C-M-k>", function()
+vim.keymap.set("n", "<C-k>", function()
   harpoon:list():select(3)
 end)
 
-vim.keymap.set("n", "<C-M-l>", function()
+vim.keymap.set("n", "<C-l>", function()
   harpoon:list():select(4)
 end)
 
@@ -77,3 +75,5 @@ vim.keymap.set("x", "<leader>p", '"_dP')
 
 vim.keymap.set("n", "<A-o>", "i<CR><ESC>", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-i>", "i<Space><ESC>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>cc", ":!./mvnw compile -q<CR>", { noremap = true, silent = true })

@@ -97,11 +97,10 @@ return {
     event = "BufReadPre",
     priority = 1200,
     config = function()
-      local colors = require("solarized-osaka.colors").setup()
       require("incline").setup({
         highlight = {
           groups = {
-            InclineNormal = { default = true, guifg = colors.cyan300 },
+            InclineNormal = { default = true, guifg = "#c4a7e7" },
           },
         },
         window = { margin = { vertical = 0, horizontal = 1 } },

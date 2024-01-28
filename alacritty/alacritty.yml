@@ -1,11 +1,14 @@
 import:
-  - ~/.config/alacritty/tokyonight_night.yml
+  #- ~/.config/alacritty/tokyonight.yml
+  # - ~/.config/alacritty/tokyonight_night.yml
+  - ~/.config/alacritty/rose-pipe.yml
+    #.config/alacritty/colors.yml
   - ~/.config/alacritty/fonts.yml
 
 ## Set environment variables
 env:
   TERM: xterm-256color
-  WINIT_X11_SCALE_FACTOR: '1.0'
+  WINIT_X11_SCALE_FACTOR: "1.0"
 
 ## Terminal window settings
 window:
@@ -21,12 +24,12 @@ window:
   startup_mode: Windowed
   dynamic_title: true
 
-## scrolling
-  history: 10000
-  multiplier: 3
+  ## scrolling
+  # history:0000
+  # multiplier: 3
 
-## Background opacity
-  opacity: 0.9
+  ## Background opacity
+  opacity: .9
 
 ## Cursor
 cursor:

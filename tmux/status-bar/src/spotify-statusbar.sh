@@ -20,7 +20,6 @@ function is_spotify_running() {
 # }
 
 function format_time() {
-	local seconds=$1
 	printf "%02d" $1
 }
 
@@ -34,18 +33,23 @@ function format_time() {
 # 	fi
 # }
 
-function calculate_progress() {
-	local duration=$1
-	local position=$2
-	local progress=$((position * 100 / duration))
-	echo $progress
-}
+# function calculate_progress() {
+# 	local duration=$1
+# 	local position=$2
+# 	local progress=$((position * 100 / duration))
+# 	echo $progress
+# }
 
 function generate_progress_bar() {
 	local progress=$1
 
+	# local BG_COLOR="#24283B"
+	# local ACCENT_COLOR="#0DD3BB"
+	# local BG_BAR="#15161e"
+	# local TIME_COLOR="#414868"
+
 	local BG_COLOR="#24283B"
-	local ACCENT_COLOR="#0DD3BB"
+	local ACCENT_COLOR="#7db1c7"
 	local BG_BAR="#15161e"
 	local TIME_COLOR="#414868"
 
@@ -64,7 +68,7 @@ function generate_progress_bar() {
 		O=" $OUTPUT"
 
 		if [ $PROGRESS -le $TIME_INDEX ]; then
-			echo "#[nobold,fg=$BG_COLOR,bg=$ACCENT_COLOR]${O:0:$PROGRESS}#[fg=$ACCENT_COLOR,bg=$BG_BAR]${O:$PROGRESS:$TIME_INDEX} #[fg=$TIME_COLOR,bg=$BG_BAR]$TIME "
+			echo "#[nobold,fg=$BG_COLOR,bg=$ACCENT_COLOR]${O:0:$PROGRESS}#[fg=$ACCENT_COLOR,bg=$BG_BAR]${O:$PROGRESS:$TIME_INDEX} #[fg=$TIME_COLOR,bg=$BG_BAR]$TIME"
 		else
 			DIFF=$((PROGRESS - TIME_INDEX))
 			echo "#[nobold,fg=$BG_COLOR,bg=$ACCENT_COLOR]${O:0:$TIME_INDEX} #[fg=$BG_BAR,bg=$ACCENT_COLOR]${OUT:$TIME_INDEX:$DIFF}#[fg=$TIME_COLOR,bg=$BG_BAR]${OUT:$PROGRESS}"

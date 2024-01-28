@@ -8,7 +8,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf fzf-tab)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf fzf-tab z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -21,7 +21,8 @@ alias l='exa -lah --icons'
 alias ll='exa -lh --icons'
 alias mvn:qs="mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4"
 alias mvnw="./mvnw"
-alias n='nvim'
+alias gradlew="./gradlew"
+alias nv='nvim'
 alias gs='git status '
 alias gss='git status -s'
 alias gp='git pull -r'
@@ -45,6 +46,8 @@ alias g='git '
 alias gm='git merge '
 alias gr='git reset '
 alias gdf='git clean -f'
+alias bat=batcat
+alias xcp='xclip -selection clipboard'
 
 # tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
@@ -83,3 +86,15 @@ export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/java/lombok.jar"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+# pnpm
+export PNPM_HOME="/home/mahl/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
