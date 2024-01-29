@@ -72,7 +72,7 @@ return {
         desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
       },
       {
-        "\\\\",
+        ";b",
         function()
           local builtin = require("telescope.builtin")
           builtin.buffers()

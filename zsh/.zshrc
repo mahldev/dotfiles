@@ -5,6 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export FZF_DEFAULT_OPTS="
+--color=fg:#908caa,hl:#ebbcba
+--color=fg+:#e0def4,hl+:#ebbcba
+--color=border:#403d52,header:#31748f,gutter:#191724
+--color=spinner:#f6c177,info:#9ccfd8,separator:#403d52
+--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
+
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -15,6 +22,7 @@ source $ZSH/oh-my-zsh.sh
 # fzf_completions_path
 fzf_completions_path=~/.oh-my-zsh/completions
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 
 # aliases
 alias l='exa -lah --icons'
