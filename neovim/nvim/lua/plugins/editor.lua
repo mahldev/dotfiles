@@ -1,5 +1,3 @@
--- https://github.com/craftzdog/dotfiles-public/blob/master/.config/nvim/lua/plugins/editor.lua
-
 return {
   {
     "echasnovski/mini.hipatterns",
@@ -59,9 +57,9 @@ return {
           builtin.find_files({
             no_ignore = false,
             hidden = true,
+            -- layout_strategy = "vertical",
           })
         end,
-        desc = "Lists files in your current working directory, respects .gitignore",
       },
       {
         ";r",
@@ -69,7 +67,6 @@ return {
           local builtin = require("telescope.builtin")
           builtin.live_grep()
         end,
-        desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
       },
       {
         ";b",
@@ -77,7 +74,6 @@ return {
           local builtin = require("telescope.builtin")
           builtin.buffers()
         end,
-        desc = "Lists open buffers",
       },
       {
         ";t",
@@ -85,7 +81,6 @@ return {
           local builtin = require("telescope.builtin")
           builtin.help_tags()
         end,
-        desc = "Lists available help tags and opens a new window with the relevant help info on <cr>",
       },
       {
         ";;",
@@ -93,7 +88,6 @@ return {
           local builtin = require("telescope.builtin")
           builtin.resume()
         end,
-        desc = "Resume the previous telescope picker",
       },
       {
         ";e",
@@ -101,7 +95,6 @@ return {
           local builtin = require("telescope.builtin")
           builtin.diagnostics()
         end,
-        desc = "Lists Diagnostics for all open buffers or a specific buffer",
       },
       {
         ";s",
@@ -109,7 +102,6 @@ return {
           local builtin = require("telescope.builtin")
           builtin.treesitter()
         end,
-        desc = "Lists Function names, variables, from Treesitter",
       },
       {
         "<Leader>sf",
@@ -128,7 +120,7 @@ return {
             grouped = true,
             previewer = false,
             initial_mode = "normal",
-            layout_config = { height = 40 },
+            layout_config = { height = 35 },
           })
         end,
         desc = "Open File Browser with the path of the current buffer",

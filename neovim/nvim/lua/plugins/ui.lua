@@ -61,35 +61,6 @@ return {
     },
   },
 
-  -- animations
-  -- {
-  --   "echasnovski/mini.animate",
-  --   event = "VeryLazy",
-  --   opts = function(_, opts)
-  --     opts.scroll = {
-  --       enable = false,
-  --     }
-  --   end,
-  -- },
-
-  -- buffer line
-  --  {
-  --    "akinsho/bufferline.nvim",
-  --    event = "VeryLazy",
-  --    keys = {
-  --      { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
-  --      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
-  --    },
-  --    opts = {
-  --      options = {
-  --        mode = "tabs",
-  --        -- separator_style = "slant",
-  --        show_buffer_close_icons = false,
-  --        show_close_icon = false,
-  --      },
-  --    },
-  --  },
-
   -- filename
   {
     "b0o/incline.nvim",
@@ -100,7 +71,7 @@ return {
       require("incline").setup({
         highlight = {
           groups = {
-            InclineNormal = { default = true, guifg = "#c4a7e7" },
+            InclineNormal = { default = true, guifg = "#bda0de" },
           },
         },
         window = { margin = { vertical = 0, horizontal = 1 } },

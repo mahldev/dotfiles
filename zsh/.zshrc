@@ -15,7 +15,10 @@ export FZF_DEFAULT_OPTS="
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf fzf-tab z)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf fzf-tab z zsh-vi-mode)
+
+ZVM_CURSOR_STYLE_ENABLED=false
+# ZVM_LINE_INIT_MODE=n
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,10 +94,9 @@ esac
 # lombok
 export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/java/lombok.jar"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach-session -t last || tmux new-session
+fi
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
@@ -106,3 +108,9 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+

@@ -44,6 +44,8 @@ return {
       cmd = {
         "jdtls",
         "--jvm-arg=" .. string.format("-javaagent:%s", vim.fn.expand("$HOME/.local/share/java/lombok.jar")),
+        -- "--jvm-arg="
+        --   .. string.format("-javaagent:%s", vim.fn.expand("$HOME/.local/share/java/mapstruct-1.5.5.Final.jar")),
       },
     }
   end,
