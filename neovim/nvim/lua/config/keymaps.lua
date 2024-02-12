@@ -45,16 +45,14 @@ vim.keymap.set("i", "<A-j>", "<Nop>", { noremap = true, silent = true })
 vim.keymap.set("i", "<A-k>", "<Nop>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
-
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
--- REMAP folke/flash.nvim flashbang
-vim.keymap.set("n", "f", "f")
-vim.keymap.set("n", "F", "F")
-vim.keymap.set("n", "t", "t")
-vim.keymap.set("n", "T", "T")
-vim.keymap.set("n", ";", "<Nop>")
 
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>u",
+  "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>",
+  { noremap = true, silent = true }
+)
 
 vim.keymap.set("x", "<leader>p", '"_dP')
 
@@ -68,9 +66,8 @@ vim.keymap.set(
   ":!./gradlew build --continuous --quiet &> /dev/null & <CR>",
   { noremap = true, silent = true }
 )
-
 vim.keymap.set("n", "<leader>o", "<cmd>SymbolsOutline<CR>")
 
-vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "J", "mzJ`z:delmarks z<CR>", { silent = true })
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")

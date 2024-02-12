@@ -57,7 +57,7 @@ return {
           builtin.find_files({
             no_ignore = false,
             hidden = true,
-            -- layout_strategy = "vertical",
+            previewer = false,
           })
         end,
       },
